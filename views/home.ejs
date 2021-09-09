@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+    <p><%= homeParagraph %></p>
+    <% for(let i=0; i<allPosts.length; i++){ %>
+        <% let displayContent = allPosts[i].content.substring(0,100); %>
+        <% const additionalContent=" ..."; %>
+        <% displayContent = displayContent.concat(additionalContent); %>
+        <% let url = "/posts/" + urlOfPosts[i]; %>
+        <h1><%= allPosts[i].title %></h1>
+        <p><%= displayContent %><a href=<%= url %>> Read More</a></p>
+    <% } %>
+
+<%- include("partials/footer"); -%>
